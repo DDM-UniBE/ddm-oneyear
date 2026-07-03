@@ -1,27 +1,12 @@
 (function(){
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // ── mobile "1" intro animation ──
+  // ── mobile "1" — static, no animation ──
   var isMobile = window.matchMedia('(max-width:640px)').matches;
   var mobileOne = document.querySelector('.mobile-one');
   var heroBody  = document.querySelector('.hero-body');
-  if(isMobile && mobileOne && !reduce){
-    // start animation immediately — element is already opacity:1 in CSS
-    mobileOne.style.animation = 'oneIn 1.8s cubic-bezier(.4,0,.2,1) forwards';
-    // reveal text as the "1" starts fading (~1.1s in)
-    setTimeout(function(){
-      if(heroBody) heroBody.classList.add('text-in');
-    }, 1100);
-    // lock ghost state after animation ends
-    setTimeout(function(){
-      mobileOne.style.animation = 'none';
-      mobileOne.style.opacity   = '0.22';
-      mobileOne.style.transform = 'scale(1)';
-    }, 1900);
-  } else {
-    // desktop or reduced motion: always visible, no animation
-    if(heroBody) heroBody.style.opacity = '1';
-    if(mobileOne) mobileOne.style.display = 'none';
+  if(!isMobile && mobileOne){
+    mobileOne.style.display = 'none';
   }
 
   // ── nav: transparent over hero, solid on scroll ──
@@ -53,25 +38,7 @@
     });
   }
 
-  // ── venue map ──
-  var mapEl = document.getElementById('venueMap');
-  var venueFb = document.getElementById('venueFallback');
-  if(mapEl && window.L){
-    try{
-      mapEl.style.display = 'block';
-      if(venueFb) venueFb.style.display = 'none';
-      var lat = 46.9469579, lon = 7.4258761;
-      var map = L.map(mapEl, {scrollWheelZoom:false, zoomControl:true, attributionControl:true}).setView([lat,lon], 16);
-      L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-        maxZoom:19, subdomains:'abcd',
-        attribution:'&copy; OpenStreetMap contributors &copy; CARTO'
-      }).addTo(map);
-      var pin = L.divIcon({className:'ddm-pin', html:'<span></span>', iconSize:[18,18], iconAnchor:[9,18], popupAnchor:[0,-16]});
-      L.marker([lat,lon], {icon:pin}).addTo(map)
-        .bindPopup('<strong>Auditorium Ettore Rossi</strong><br>Freiburgstrasse 15, 3008 Bern');
-      setTimeout(function(){ map.invalidateSize(); }, 250);
-    }catch(e){ mapEl.style.display='none'; if(venueFb) venueFb.style.display='flex'; }
-  }
+  // ── venue map (SVG, no library needed) ──
 
   function FlowField(canvas, opts){
     opts = opts || {};
