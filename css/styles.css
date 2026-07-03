@@ -152,8 +152,11 @@
   .row .rs em{display:block;font-style:normal;font-size:14px;color:var(--muted);margin-top:5px;}
   .row .rd{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#a3a3a8;white-space:nowrap;}
   .row.brk .rs{font-style:italic;font-size:16px;color:var(--muted);}
-  .row.hl{background:#f4efe8;margin:0 -18px;padding-left:20px;padding-right:20px;}
+  .row.hl{background:#f4efe8;margin:0 -18px;padding-left:20px;padding-right:20px;border-bottom:0;}
   .row.hl .rs{color:var(--ink);}
+  .row.hl + .row{border-top:0;}
+  .row:has(+ .row.hl){border-bottom:0;}
+  .rs-welcome{color:var(--red);font-weight:500;}
   @media(max-width:680px){
     .row{grid-template-columns:1fr;gap:5px;}
     .row .rd{display:none;}
