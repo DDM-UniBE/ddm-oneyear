@@ -6,20 +6,22 @@
   var mobileOne = document.querySelector('.mobile-one');
   var heroBody  = document.querySelector('.hero-body');
   if(isMobile && mobileOne && !reduce){
-    // run animation
-    mobileOne.style.animation = 'oneIn 2s cubic-bezier(.4,0,.2,1) forwards';
-    // reveal text after animation peaks (~1.4s in)
+    // slight delay so browser has painted before animating
+    setTimeout(function(){
+      mobileOne.style.animation = 'oneIn 2.8s cubic-bezier(.4,0,.2,1) forwards';
+    }, 80);
+    // reveal text once the "1" starts fading (~1.8s into animation)
     setTimeout(function(){
       if(heroBody) heroBody.classList.add('text-in');
-    }, 1400);
-    // after animation fully ends, drop to ghost opacity and stay
+    }, 1900);
+    // lock ghost state after animation ends
     setTimeout(function(){
       mobileOne.style.animation = 'none';
-      mobileOne.style.opacity   = '0.08';
+      mobileOne.style.opacity   = '0.07';
       mobileOne.style.transform = 'scale(1)';
-    }, 2100);
+    }, 3000);
   } else {
-    // desktop or reduced motion: text always visible
+    // desktop or reduced motion: always visible, no animation
     if(heroBody) heroBody.style.opacity = '1';
     if(mobileOne) mobileOne.style.display = 'none';
   }
