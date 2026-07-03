@@ -303,7 +303,6 @@
   /* ── mobile "1" intro animation ── */
   .mobile-one{display:none;}
   @media(max-width:640px){
-    /* the "1" element — starts visible, JS drives the animation */
     .mobile-one{
       display:block;
       position:absolute;
@@ -313,14 +312,14 @@
       opacity:1;
       transform:scale(1);
       pointer-events:none;
+      transition:none;
     }
     @keyframes oneIn{
-      0%  {opacity:0;  transform:scale(.82);}
-      20% {opacity:1;  transform:scale(1.02);}
-      55% {opacity:1;  transform:scale(1);}
-      100%{opacity:0.07;transform:scale(1);}
+      0%  {opacity:1;  transform:scale(1);}
+      45% {opacity:1;  transform:scale(1.03);}
+      70% {opacity:1;  transform:scale(1);}
+      100%{opacity:0.22;transform:scale(1);}
     }
-    /* hero text: hidden until animation settles */
     .hero-body{opacity:0;transition:opacity .9s ease;}
     .hero-body.text-in{opacity:1;}
   }

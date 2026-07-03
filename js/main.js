@@ -6,20 +6,18 @@
   var mobileOne = document.querySelector('.mobile-one');
   var heroBody  = document.querySelector('.hero-body');
   if(isMobile && mobileOne && !reduce){
-    // slight delay so browser has painted before animating
-    setTimeout(function(){
-      mobileOne.style.animation = 'oneIn 2.8s cubic-bezier(.4,0,.2,1) forwards';
-    }, 80);
-    // reveal text once the "1" starts fading (~1.8s into animation)
+    // start animation immediately — element is already opacity:1 in CSS
+    mobileOne.style.animation = 'oneIn 2.6s cubic-bezier(.4,0,.2,1) forwards';
+    // reveal text as the "1" starts fading (~1.7s in)
     setTimeout(function(){
       if(heroBody) heroBody.classList.add('text-in');
-    }, 1900);
+    }, 1700);
     // lock ghost state after animation ends
     setTimeout(function(){
       mobileOne.style.animation = 'none';
-      mobileOne.style.opacity   = '0.07';
+      mobileOne.style.opacity   = '0.22';
       mobileOne.style.transform = 'scale(1)';
-    }, 3000);
+    }, 2700);
   } else {
     // desktop or reduced motion: always visible, no animation
     if(heroBody) heroBody.style.opacity = '1';
