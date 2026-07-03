@@ -1,3 +1,38 @@
+/* ── FRUTIGER NEUE LT PRO — Web Fonts ── */
+/* Font files go in: assets/fonts/                  */
+/* Required: FrutigerNeueLTPro-Book.woff2           */
+/*           FrutigerNeueLTPro-Light.woff2          */
+/*           FrutigerNeueLTPro-Regular.woff2        */
+/*           FrutigerNeueLTPro-Bold.woff2           */
+@font-face {
+  font-family: 'Frutiger';
+  src: url('../assets/fonts/FrutigerNeueLTPro-Book.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Frutiger';
+  src: url('../assets/fonts/FrutigerNeueLTPro-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Frutiger';
+  src: url('../assets/fonts/FrutigerNeueLTPro-Regular.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Frutiger';
+  src: url('../assets/fonts/FrutigerNeueLTPro-Bold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root{
     --red:#C8102E;
     --red-bright:#e8344c;
@@ -72,7 +107,6 @@
   /* HERO */
   .hero{position:relative;background:var(--dark);color:#fff;overflow:hidden;margin-top:calc(-1 * var(--nav-h));}
   .hero-bg{position:absolute;inset:0;z-index:0;background:url("../assets/images/hero.jpg") center/cover no-repeat;opacity:1;}
-  @media(max-width:760px){.hero-bg{background-position:75% center;}}
   .hero-veil{position:absolute;inset:0;z-index:2;pointer-events:none;
     background:
       linear-gradient(0deg, rgba(11,14,33,.80) 0%, rgba(11,14,33,.15) 50%, rgba(11,14,33,0) 100%);
@@ -275,9 +309,25 @@
     :root{--nav-h:66px;}
     body{font-size:16px;}
     .section{padding:72px 0;}
-    .hero-body{padding:calc(var(--nav-h) + 34px) 0 84px;}
-    .meta-inner{display:flex;flex-direction:column;width:100%;}
-    .meta-inner > div{flex:1 1 100%;border-bottom:1px solid var(--line-dark);padding-bottom:18px;}
+
+    /* hero: stronger veil on left so text is always readable */
+    .hero-bg{background-position:80% center;}
+    .hero-veil{background:
+      linear-gradient(to right, rgba(11,14,33,.97) 0%, rgba(11,14,33,.92) 55%, rgba(11,14,33,.5) 100%),
+      linear-gradient(to bottom, rgba(11,14,33,0) 50%, rgba(11,14,33,.95) 100%);}
+
+    /* title: force 2 lines */
+    .hero h1{font-size:clamp(36px,9.5vw,52px);max-width:100%;}
+    .hero-lead{font-size:16px;max-width:80%;}
+    .hero-cta .btn{padding:14px 22px;font-size:13px;}
+    .hero-body{padding:calc(var(--nav-h) + 28px) 0 56px;}
+
+    /* venue: stack vertically, nothing cut off */
+    .meta-inner{display:flex;flex-direction:column;width:100%;gap:0;}
+    .meta-inner > div{flex:1 1 100%;padding-bottom:14px;}
+    .meta-item{gap:10px;}
+    .meta-v{font-size:17px;}
+
     .ub-word{display:none;}
     .foot-meta{text-align:left;}
   }
