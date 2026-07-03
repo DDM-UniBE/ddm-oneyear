@@ -7,17 +7,17 @@
   var heroBody  = document.querySelector('.hero-body');
   if(isMobile && mobileOne && !reduce){
     // start animation immediately — element is already opacity:1 in CSS
-    mobileOne.style.animation = 'oneIn 2.6s cubic-bezier(.4,0,.2,1) forwards';
-    // reveal text as the "1" starts fading (~1.7s in)
+    mobileOne.style.animation = 'oneIn 1.8s cubic-bezier(.4,0,.2,1) forwards';
+    // reveal text as the "1" starts fading (~1.1s in)
     setTimeout(function(){
       if(heroBody) heroBody.classList.add('text-in');
-    }, 1700);
+    }, 1100);
     // lock ghost state after animation ends
     setTimeout(function(){
       mobileOne.style.animation = 'none';
       mobileOne.style.opacity   = '0.22';
       mobileOne.style.transform = 'scale(1)';
-    }, 2700);
+    }, 1900);
   } else {
     // desktop or reduced motion: always visible, no animation
     if(heroBody) heroBody.style.opacity = '1';
