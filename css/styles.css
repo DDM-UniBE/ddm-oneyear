@@ -226,7 +226,6 @@
   .venue-links{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px;}
   @media(max-width:760px){.venue-grid{grid-template-columns:1fr;gap:30px;}
     .venue-vis{aspect-ratio:16/9;}
-    .venue-map-svg{width:100%;height:100%;}
     .bern-photo::after{background:
       linear-gradient(to bottom, rgba(11,14,33,.18) 0%, rgba(11,14,33,.12) 42%, rgba(11,14,33,.58) 78%, rgba(11,14,33,1) 100%),
       linear-gradient(to right, rgba(11,14,33,.6) 0%, rgba(11,14,33,.42) 60%, rgba(11,14,33,.24) 100%);}}
@@ -291,16 +290,11 @@
   }
 
   /* venue map */
-  .venue-vis{position:relative;aspect-ratio:4/3;border:1px solid rgba(255,255,255,0.08);background:#0b0e21;overflow:hidden;isolation:isolate;z-index:0;border-radius:4px;}
-  .venue-map-svg{width:100%;height:100%;display:block;}
-  .venue-map-link{position:absolute;inset:0;z-index:2;cursor:pointer;}
-  .venue-map-link:hover + .venue-map-svg, .venue-vis:hover .venue-map-svg{opacity:.85;}
-  .venue-map{position:absolute;inset:0;}
-  .venue-fallback{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;text-align:center;padding:24px;}
-  .venue-fallback .pin{width:18px;height:18px;background:var(--red);border:2px solid #fff;border-radius:50% 50% 50% 0;transform:rotate(-45deg);box-shadow:0 0 0 6px rgba(200,16,46,.18);}
-  .venue-fallback .co{font-size:13px;color:var(--muted);letter-spacing:.03em;max-width:26ch;}
-  .ddm-pin span{display:block;width:18px;height:18px;background:var(--red);border:2px solid #fff;border-radius:50% 50% 50% 0;transform:rotate(-45deg);box-shadow:0 0 0 5px rgba(200,16,46,.22);}
-  .leaflet-container{font-family:var(--font);}
+  .venue-vis{position:relative;aspect-ratio:4/3;overflow:hidden;isolation:isolate;z-index:0;border-radius:4px;}
+  .venue-vis iframe{position:absolute;inset:0;width:100%;height:100%;border:none;}
+  .venue-map-img{width:100%;height:100%;object-fit:cover;display:block;transition:opacity .2s ease;}
+  .venue-map-link{display:block;width:100%;height:100%;}
+  .venue-map-link:hover .venue-map-img{opacity:.85;}
 
   /* anchor offset under sticky nav */
   .section,.hero{scroll-margin-top:72px;}
@@ -318,7 +312,7 @@
       height:80%;
       z-index:4;
       background:url('../assets/images/one.png') center/contain no-repeat;
-      opacity:0.18;
+      opacity:0.38;
       pointer-events:none;
     }
     .hero-body{opacity:1;}
