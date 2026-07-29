@@ -192,9 +192,13 @@
   .row.hl + .row{border-top:0;}
   .row:has(+ .row.hl){border-bottom:0;}
   .row.hl:hover{background:#ede8e0;}
+  .prog-actions{margin-top:36px;display:flex;flex-wrap:wrap;gap:14px;}
   @media(max-width:680px){
     .row{grid-template-columns:1fr;gap:5px;}
     .row .rd{display:none;}
+    /* keep the program clear of the screen edges on mobile */
+    .agenda{margin-left:0;margin-right:0;}
+    .row{margin-left:0;margin-right:0;padding-left:4px;padding-right:4px;}
   }
 
   /* vision */
@@ -279,10 +283,10 @@
   .nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
   @media(max-width:760px){
     :root{--nav-h:70px;}
-    .nav-links{position:fixed;top:0;left:0;right:0;bottom:0;flex-direction:column;align-items:stretch;justify-content:center;gap:0;background:rgba(11,14,33,.98);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:0;padding:80px 0 40px;display:none;z-index:199;}
+    .nav-links{position:fixed;top:0;left:0;right:0;bottom:0;flex-direction:column;align-items:stretch;justify-content:center;gap:0;background:var(--red);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:0;padding:80px 0 40px;display:none;z-index:199;}
     .nav-links.open{display:flex;}
-    .nav-links a{padding:18px 40px;font-size:20px;}
-    .nav-save-m{display:block;color:var(--red-bright);}
+    .nav-links a{padding:18px 40px;font-size:20px;color:#fff;}
+    .nav-save-m{display:block;color:#fff;font-weight:700;}
     .nav-cta{display:none;}
     .nav-toggle{display:flex;z-index:201;}
     .ub-logo-full, .nav.scrolled .ub-logo-full{display:none;}
@@ -331,8 +335,9 @@
     .hero-veil{background:rgba(11,14,33,0.55);}
 
     /* title: force 2 lines */
-    .hero h1{font-size:clamp(36px,9.5vw,52px);max-width:100%;}
-    .hero-lead{font-size:16px;max-width:80%;}
+    .hero h1{font-size:clamp(44px,12vw,64px);max-width:100%;}
+    /* match the "A milestone worth marking" body size (.section-head p = 19px) */
+    .hero-lead{font-size:19px;line-height:1.7;max-width:100%;}
     .hero-cta .btn{padding:14px 22px;font-size:13px;}
     .hero-body{padding:calc(var(--nav-h) + 72px) 0 56px;}
 
