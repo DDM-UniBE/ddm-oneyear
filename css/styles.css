@@ -193,6 +193,7 @@
   .row:has(+ .row.hl){border-bottom:0;}
   .row.hl:hover{background:#ede8e0;}
   .prog-actions{margin-top:40px;display:flex;justify-content:center;flex-wrap:wrap;gap:14px;}
+  .prog-soon{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line);padding:14px 26px;}
   .btn-ic{width:17px;height:17px;flex:none;}
   @media(max-width:680px){
     .row{grid-template-columns:1fr;gap:5px;}
