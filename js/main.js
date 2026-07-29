@@ -181,6 +181,21 @@
   }
   tick(); setInterval(tick, 1000);
 
+  // ── speaker cards: open bio via the + toggle (no hover) ──
+  var spCards = document.querySelectorAll('.sp-card');
+  if(spCards.length){
+    spCards.forEach(function(card){
+      card.addEventListener('click', function(){
+        var open = card.getAttribute('aria-expanded') === 'true';
+        spCards.forEach(function(c){ c.setAttribute('aria-expanded','false'); });
+        card.setAttribute('aria-expanded', open ? 'false' : 'true');
+      });
+    });
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape') spCards.forEach(function(c){ c.setAttribute('aria-expanded','false'); });
+    });
+  }
+
   if(!reduce){
     var io = new IntersectionObserver(function(es){
       es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
