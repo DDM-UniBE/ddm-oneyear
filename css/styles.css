@@ -277,7 +277,7 @@
   .venue-addr{color:var(--muted);font-size:16px;line-height:1.85;margin-top:14px;}
   .venue-links{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px;}
   @media(max-width:760px){.venue-grid{grid-template-columns:1fr;gap:30px;}
-    .venue-vis{aspect-ratio:16/9;max-width:none;margin-left:0;}
+    .venue-vis{aspect-ratio:4/3;max-width:300px;margin:0 auto;}
     .bern-photo::after{background:
       linear-gradient(to bottom, rgba(11,14,33,.18) 0%, rgba(11,14,33,.12) 42%, rgba(11,14,33,.58) 78%, rgba(11,14,33,1) 100%),
       linear-gradient(to right, rgba(11,14,33,.6) 0%, rgba(11,14,33,.42) 60%, rgba(11,14,33,.24) 100%);}}
@@ -387,7 +387,8 @@
     /* match the "A milestone worth marking" body size (.section-head p = 19px) */
     .hero-lead{font-size:19px;line-height:1.7;max-width:100%;}
     .hero-cta .btn{padding:14px 22px;font-size:13px;}
-    .hero-body{padding:calc(var(--nav-h) + 72px) 0 56px;}
+    .hero-body{padding:calc(var(--nav-h) + 96px) 0 28px;}
+    .meta-inner > div:last-child{padding-bottom:0;}
 
     /* venue: stack vertically, nothing cut off */
     .meta-inner{display:flex;flex-direction:column;width:100%;gap:0;}
