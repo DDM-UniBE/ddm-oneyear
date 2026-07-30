@@ -357,7 +357,7 @@
   }
 
   /* venue map */
-  .venue-vis{position:relative;aspect-ratio:3/2;overflow:hidden;isolation:isolate;z-index:0;border-radius:4px;max-width:480px;margin-left:auto;background:#eaedf0;}
+  .venue-vis{position:relative;aspect-ratio:3/2;overflow:hidden;isolation:isolate;z-index:0;border-radius:4px;max-width:520px;margin-left:auto;background:#eaedf0;padding:22px;}
   .venue-vis iframe{position:absolute;inset:0;width:100%;height:100%;border:none;}
   .venue-map-img{width:100%;height:100%;object-fit:contain;display:block;transition:opacity .2s ease;}
   .venue-map-link{display:block;width:100%;height:100%;}
