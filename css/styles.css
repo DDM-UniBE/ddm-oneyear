@@ -178,9 +178,9 @@
   /* programme (white) */
   .prog{background:#fff;}
   .prog-tag{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--red);border:1px solid rgba(200,16,46,.4);padding:6px 13px;margin-top:18px;}
-  .agenda{border-top:1px solid var(--line);margin-top:34px;margin:34px -20px 0;}
+  .agenda{border-top:1px solid var(--line);margin:34px 0 0;}
   .rs-welcome{color:var(--red);font-weight:500;}
-  .row{display:grid;grid-template-columns:132px 1fr auto;gap:26px;padding:22px 20px;border-bottom:1px solid var(--line);align-items:baseline;transition:background .15s ease;margin:0 -20px;}
+  .row{display:grid;grid-template-columns:132px 1fr auto;gap:26px;padding:22px 0;border-bottom:1px solid var(--line);align-items:baseline;transition:background .15s ease;margin:0;}
   .row:hover{background:#faf9f7;}
   .row .rt{font-size:20px;font-weight:500;letter-spacing:.01em;color:var(--red);}
   .row .rs{font-size:21px;font-weight:400;color:var(--ink);}
@@ -198,9 +198,6 @@
   @media(max-width:680px){
     .row{grid-template-columns:1fr;gap:5px;}
     .row .rd{display:none;}
-    /* keep the programme clear of the screen edges on mobile */
-    .agenda{margin-left:0;margin-right:0;}
-    .row{margin-left:0;margin-right:0;padding-left:4px;padding-right:4px;}
   }
 
   /* ── speakers (headshot + bio reveal via + toggle) ── */
@@ -292,7 +289,7 @@
   .venue-addr{color:var(--muted);font-size:16px;line-height:1.85;margin-top:14px;}
   .venue-links{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px;}
   @media(max-width:760px){.venue-grid{grid-template-columns:1fr;gap:30px;}
-    .venue-vis{aspect-ratio:3/2;max-width:360px;margin:0 auto;}
+    .venue-grid .venue-vis{aspect-ratio:3/2;max-width:360px;margin:0 auto;}
     .bern-photo::after{background:
       linear-gradient(to bottom, rgba(11,14,33,.18) 0%, rgba(11,14,33,.12) 42%, rgba(11,14,33,.58) 78%, rgba(11,14,33,1) 100%),
       linear-gradient(to right, rgba(11,14,33,.6) 0%, rgba(11,14,33,.42) 60%, rgba(11,14,33,.24) 100%);}}
