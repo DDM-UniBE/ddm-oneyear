@@ -105,7 +105,7 @@
   .concept-bar b{color:var(--red);font-weight:600;}
 
   /* HERO */
-  .hero{position:relative;background:var(--dark);color:#fff;overflow:hidden;margin-top:calc(-1 * var(--nav-h));}
+  .hero{position:relative;background:var(--dark);color:#fff;overflow:hidden;margin-top:calc(-1 * var(--nav-h));min-height:86vh;}
   .hero-bg{position:absolute;inset:0;z-index:0;background:url("../assets/images/hero.jpg") center/cover no-repeat;opacity:1;}
   .hero-veil{position:absolute;inset:0;z-index:2;pointer-events:none;
     background:
@@ -391,6 +391,7 @@
     .section{padding:72px 0;}
 
     /* hero: stronger veil on left so text is always readable */
+    .hero{min-height:auto;}
     .hero-bg{display:none;}
     .hero-veil{background:rgba(11,14,33,0.55);}
 
