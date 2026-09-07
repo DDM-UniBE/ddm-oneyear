@@ -391,9 +391,9 @@
     body{font-size:16px;}
     .section{padding:72px 0;}
 
-    /* hero: stronger veil on left so text is always readable */
+    /* hero: mobile-specific portrait image + stronger veil for readability */
     .hero{min-height:auto;}
-    .hero-bg{display:none;}
+    .hero-bg{display:block;background-image:url("../assets/images/hero-mobile.jpg");}
     .hero-veil{background:rgba(11,14,33,0.55);}
 
     /* title: force 2 lines */
