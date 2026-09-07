@@ -81,10 +81,10 @@
     display:inline-flex;align-items:center;gap:12px;
     font-family:inherit;font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
     text-decoration:none;cursor:pointer;border:0;border-radius:0;
-    padding:15px 26px;transition:background .15s ease, color .15s ease, border-color .15s ease;
+    padding:15px 26px;transition:background .15s ease, color .15s ease, border-color .15s ease, filter .15s ease;
   }
-  .btn-red{background:var(--red);color:#fff;}
-  .btn-red:hover{background:#a50d26;}
+  .btn-red{background:linear-gradient(135deg,#EB001E 0%,#EB001E 68%,#F59D0F 100%);color:#fff;}
+  .btn-red:hover{filter:brightness(.93);}
   .btn-dark{background:var(--ink);color:#fff;}
   .btn-dark:hover{background:#000;}
   .btn-line{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.35);}
@@ -107,7 +107,7 @@
 
   /* HERO */
   .hero{position:relative;background:var(--dark);color:#fff;overflow:hidden;margin-top:calc(-1 * var(--nav-h));min-height:86vh;}
-  .hero-bg{position:absolute;inset:0;z-index:0;background:url("../assets/images/hero.jpg") center/cover no-repeat;opacity:1;}
+  .hero-bg{position:absolute;inset:0;z-index:0;background:url("../assets/images/hero3.png") center/cover no-repeat;opacity:1;}
   .hero-veil{position:absolute;inset:0;z-index:2;pointer-events:none;
     background:
       linear-gradient(0deg, rgba(11,14,33,.80) 0%, rgba(11,14,33,.15) 50%, rgba(11,14,33,0) 100%);
@@ -183,7 +183,7 @@
   .rs-welcome{color:var(--red);font-weight:500;}
   .row{display:grid;grid-template-columns:132px 1fr auto;gap:26px;padding:22px 0;border-bottom:1px solid var(--line);align-items:baseline;transition:background .15s ease;margin:0;}
   .row:hover{background:#faf9f7;}
-  .row .rt{font-size:20px;font-weight:500;letter-spacing:.01em;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;}
+  .row .rt{font-size:20px;font-weight:500;letter-spacing:.01em;color:var(--red);}
   .row .rs{font-size:21px;font-weight:400;color:var(--ink);}
   .row .rs em{display:block;font-style:normal;font-size:14px;color:var(--muted);margin-top:5px;}
   .row .rd{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#a3a3a8;white-space:nowrap;}
