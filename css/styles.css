@@ -83,8 +83,8 @@
     text-decoration:none;cursor:pointer;border:0;border-radius:0;
     padding:15px 26px;transition:background .15s ease, color .15s ease, border-color .15s ease, filter .15s ease;
   }
-  .btn-red{background:linear-gradient(135deg,#EB001E 0%,#EB001E 68%,#F59D0F 100%);color:#fff;}
-  .btn-red:hover{filter:brightness(.93);}
+  .btn-red{background:var(--red);color:#fff;}
+  .btn-red:hover{background:#a50d26;}
   .btn-dark{background:var(--ink);color:#fff;}
   .btn-dark:hover{background:#000;}
   .btn-line{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.35);}
