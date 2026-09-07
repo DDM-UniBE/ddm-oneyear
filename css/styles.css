@@ -368,7 +368,7 @@
   .mobile-one{display:none;}
   @media(max-width:640px){
     .mobile-one{
-      display:block;
+      display:none;
       position:absolute;
       right:-8%;
       top:50%;
@@ -394,7 +394,7 @@
     /* hero: mobile-specific portrait image + stronger veil for readability */
     .hero{min-height:auto;}
     .hero-bg{display:block;background-image:url("../assets/images/hero-mobile.jpg");}
-    .hero-veil{background:rgba(11,14,33,0.55);}
+    .hero-veil{background:rgba(11,14,33,0.72);}
 
     /* title: force 2 lines */
     .hero h1{font-size:clamp(44px,12vw,64px);max-width:100%;}
