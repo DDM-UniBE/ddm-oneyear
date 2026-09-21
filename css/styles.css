@@ -186,6 +186,17 @@
   .row .rt{font-size:20px;font-weight:500;letter-spacing:.01em;color:var(--red);}
   .row .rs{font-size:21px;font-weight:400;color:var(--ink);}
   .row .rs em{display:block;font-style:normal;font-size:14px;color:var(--muted);margin-top:5px;}
+  .row .rs em b{color:var(--ink);font-weight:600;}
+  .row.has-detail{cursor:pointer;}
+  .rplus{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;margin-left:12px;padding:0;border:1.5px solid var(--line);border-radius:50%;background:transparent;cursor:pointer;position:relative;top:-2px;vertical-align:middle;flex:none;transition:transform .3s ease, border-color .2s ease;}
+  .rplus::before,.rplus::after{content:"";position:absolute;background:var(--muted);border-radius:1px;transition:background .2s ease;}
+  .rplus::before{width:9px;height:1.5px;}
+  .rplus::after{width:1.5px;height:9px;transition:opacity .2s ease, background .2s ease;}
+  .row.has-detail:hover .rplus{border-color:var(--muted);}
+  .row.has-detail:hover .rplus::before,.row.has-detail:hover .rplus::after{background:var(--ink);}
+  .row.open .rplus{transform:rotate(135deg);border-color:var(--muted);}
+  .rdetail{max-height:0;overflow:hidden;opacity:0;padding-top:0;transition:max-height .4s ease, opacity .28s ease, padding-top .4s ease;}
+  .row.open .rdetail{max-height:460px;opacity:1;padding-top:10px;}
   .row .rd{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#a3a3a8;white-space:nowrap;}
   .row.brk .rs{font-style:italic;font-size:16px;color:var(--muted);}
   .row.hl{background:#f4efe8;border-bottom:0;}
